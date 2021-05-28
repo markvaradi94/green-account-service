@@ -12,7 +12,7 @@ import ro.asis.green.account.service.service.AccountService
 @Component
 class DataLoader(private val accountService: AccountService) : CommandLineRunner {
     override fun run(vararg args: String?) {
-        accountService.addAccount(
+//        accountService.addAccount(
 //            AccountDto(
 //                id = ObjectId.get().toHexString(),
 //                username = "markvaradi94",

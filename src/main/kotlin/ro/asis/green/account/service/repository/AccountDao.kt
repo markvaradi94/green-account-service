@@ -30,9 +30,9 @@ class AccountDao(private val mongo: MongoTemplate) {
         ofNullable(filters.phoneNumber)
             .ifPresent { criteria.add(Criteria.where("phoneNumber").regex(".*$it.*", "i")) }
         ofNullable(filters.role)
-            .ifPresent { criteria.add(Criteria.where("username").`is`(it)) }
+            .ifPresent { criteria.add(Criteria.where("type").regex(".*$it.*", "i")) }
         ofNullable(filters.type)
-            .ifPresent { criteria.add(Criteria.where("username").`is`(it)) }
+            .ifPresent { criteria.add(Criteria.where("role").regex(".*$it.*", "i")) }
 
         return criteria
     }
